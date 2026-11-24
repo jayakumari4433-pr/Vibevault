@@ -10,6 +10,7 @@ import { adminLogout } from "@/app/admin/actions";
 const NAV: { href: string; label: string; icon: IconName }[] = [
   { href: "/admin", label: "Dashboard", icon: "dashboard" },
   { href: "/admin/orders", label: "Orders", icon: "clipboard" },
+  { href: "/admin/catalog", label: "Catalog", icon: "layers" },
   { href: "/admin/boxes", label: "Boxes", icon: "box" },
   { href: "/admin/inventory", label: "Inventory", icon: "layers" },
   { href: "/admin/quiz", label: "Quiz Builder", icon: "sparkle" },

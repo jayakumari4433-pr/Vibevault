@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { products } from "@/lib/products";
 import { vibes } from "@/lib/vibes";
 
-const BASE = "https://vibevault.in";
+const BASE = "https://clueandcharm.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [

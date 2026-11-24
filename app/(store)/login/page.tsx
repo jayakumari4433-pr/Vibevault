@@ -19,7 +19,7 @@ export default function LoginPage() {
       <div className="mx-auto max-w-md">
         <div className="text-center">
           <LogoMark className="mx-auto h-14 w-14" />
-          <h1 className="mt-4 text-3xl font-bold text-ink">Welcome to VibeVault</h1>
+          <h1 className="mt-4 text-3xl font-bold text-ink">Welcome to Clue & Charm</h1>
           <p className="mt-2 text-stone">
             Log in or sign up to order and track your little surprises.
           </p>

@@ -27,7 +27,7 @@ export default function AboutPage() {
             We sell a <span className="text-gradient">feeling</span>, not a price tag
           </h1>
           <p className="mt-5 text-lg text-stone">
-            VibeVault is a small, independent team in India obsessed with that
+            Clue & Charm is a small, independent team in India obsessed with that
             first-open grin. We don&apos;t shout about how much you get — we care
             that it <em>feels</em> like you. You tell us your vibe, your colour,
             a little note; a real person packs it by hand.

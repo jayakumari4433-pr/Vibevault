@@ -7,13 +7,7 @@ import { inr } from "@/lib/format";
 import { Icon } from "@/components/icons";
 import { ConfigureBox } from "@/components/ConfigureBox";
 import { ReviewCard } from "@/components/ReviewCard";
-
-const TYPE_EMOJI: Record<string, string> = {
-  ring: "💫",
-  pendant: "🫧",
-  jewellery: "🎀",
-  customize: "🎁",
-};
+import { ProductMedia } from "@/components/art/ProductMedia";
 
 export function generateStaticParams() {
   return products.filter((p) => p.type !== "customize").map((p) => ({ id: p.id }));
@@ -59,15 +53,16 @@ export default async function BoxDetailPage({
       <div className="mt-6 grid gap-10 lg:grid-cols-2">
         {/* Visual + feeling */}
         <div className="lg:sticky lg:top-24 lg:self-start">
-          <div className="card tint relative aspect-square overflow-hidden">
-            <div className="flex h-full flex-col items-center justify-center gap-5 p-8 text-center">
-              <span className="text-7xl animate-float">{TYPE_EMOJI[product.type]}</span>
-              <div>
-                <p className="eyebrow">{product.kicker}</p>
-                <p className="mt-1 font-display text-3xl font-bold text-ink">{product.name}</p>
-              </div>
-              <span className="chip chip-accent">a surprise, on purpose</span>
+          <div data-vibe={initialVibe ?? undefined} className="mystery card tint relative aspect-square overflow-hidden">
+            <div className="mystery-media h-full w-full">
+              <ProductMedia type={product.type} image={product.image} alt={product.name} />
             </div>
+            <div className="mystery-veil">
+              <span className="q">?</span>
+              <span className="hint">hover to reveal</span>
+            </div>
+            <span className="absolute left-4 top-4 z-10 chip chip-accent">{product.kicker}</span>
+            <span className="absolute bottom-4 right-4 z-10 rounded-full bg-paper/90 px-4 py-2 font-bold text-ink shadow-sm">{inr(product.price)}</span>
           </div>
 
           <div className="mt-6 card p-5">
@@ -85,7 +80,7 @@ export default async function BoxDetailPage({
 
         {/* Details + configure */}
         <div>
-          <span className="chip">{TYPE_EMOJI[product.type]} {product.name}</span>
+          <span className="chip">{product.name}</span>
           <h1 className="mt-3 text-4xl font-bold text-ink">{product.tagline}</h1>
           <p className="mt-3 text-lg text-stone">{product.description}</p>
 

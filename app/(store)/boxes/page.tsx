@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { products } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
+import { Reveal } from "@/components/motion/Reveal";
 import { Icon } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -24,11 +25,11 @@ export default function BoxesPage() {
         </p>
       </div>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Reveal stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((p) => (
           <ProductCard key={p.id} product={p} />
         ))}
-      </div>
+      </Reveal>
 
       <div className="mt-12 card tint flex flex-col items-center justify-between gap-4 p-8 text-center sm:flex-row sm:text-left">
         <div>

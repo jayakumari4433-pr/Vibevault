@@ -151,7 +151,7 @@ export default function CheckoutPage() {
       key: order.keyId,
       amount: order.amount,
       currency: order.currency,
-      name: "VibeVault",
+      name: "Clue & Charm",
       description: "A feeling, boxed.",
       order_id: order.orderId,
       prefill: { name: user!.name, email: user!.email, contact: user!.phone },

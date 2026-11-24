@@ -10,6 +10,7 @@ export const products: Product[] = [
     type: "ring",
     name: "Ring Mystery Box",
     price: 149,
+    image: "/images/ring.jpg",
     kicker: "it's giving main character",
     tagline: "A ring you didn't pick, that somehow feels picked for you.",
     description:
@@ -21,6 +22,7 @@ export const products: Product[] = [
     type: "pendant",
     name: "Pendant Mystery Box",
     price: 199,
+    image: "/images/pendant.jpg",
     kicker: "wear your mood",
     tagline: "Something to rest right over your heart.",
     description:
@@ -32,6 +34,7 @@ export const products: Product[] = [
     type: "jewellery",
     name: "Jewellery Mystery Box",
     price: 249,
+    image: "/images/jewellery.jpg",
     kicker: "serotonin, delivered",
     tagline: "A little edit of surprises, matched to your vibe.",
     description:
@@ -43,6 +46,7 @@ export const products: Product[] = [
     type: "jewellery",
     name: "Jewellery Box · Extra",
     price: 399,
+    image: "/images/jewellery-extra.jpg",
     kicker: "go full spoil",
     tagline: "The whole feeling — a bigger hit of surprise.",
     description:
@@ -54,6 +58,7 @@ export const products: Product[] = [
     type: "customize",
     name: "Customise Your Surprise",
     price: 70,
+    image: "/images/customize.jpg",
     kicker: "you set the vibe",
     tagline: "Your budget, your colour, your note — our surprise.",
     description:

@@ -3,6 +3,7 @@
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { couponAction } from "@/app/admin/actions";
+import { Toggle } from "./Toggle";
 import type { DbCoupon } from "@/lib/db";
 
 export function CouponsClient({ coupons }: { coupons: DbCoupon[] }) {
@@ -36,13 +37,7 @@ export function CouponsClient({ coupons }: { coupons: DbCoupon[] }) {
             {c.description && <p className="mt-2 text-sm text-stone">{c.description}</p>}
             <p className="mt-1 text-xs text-mute">{c.uses} redemptions</p>
           </div>
-          <button
-            onClick={() => toggle(c)}
-            className={`relative h-7 w-12 rounded-full transition-colors ${c.active ? "bg-sage" : "bg-line"}`}
-            aria-label={c.active ? "Deactivate" : "Activate"}
-          >
-            <span className={`absolute top-1 h-5 w-5 rounded-full bg-white shadow transition-transform ${c.active ? "translate-x-6" : "translate-x-1"}`} />
-          </button>
+          <Toggle on={c.active} onChange={() => toggle(c)} label={c.active ? "Deactivate" : "Activate"} />
         </div>
       ))}
     </div>

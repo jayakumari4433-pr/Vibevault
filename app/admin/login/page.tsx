@@ -4,7 +4,7 @@ import { isAdmin } from "@/app/admin/auth";
 import { AdminLogin } from "@/components/admin/AdminLogin";
 
 export const metadata: Metadata = {
-  title: "Admin login · VibeVault",
+  title: "Admin login · Clue & Charm",
   robots: { index: false, follow: false },
 };
 

@@ -20,6 +20,7 @@ export interface Product {
   tagline: string; // the feeling
   description: string;
   feelings: string[]; // feeling words, NOT contents/quantity
+  image?: string; // optional real photo (in /public/images); falls back to illustration
 }
 
 export interface Vibe2 {

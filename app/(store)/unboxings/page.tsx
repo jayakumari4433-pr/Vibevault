@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { unboxings, reviews } from "@/lib/content";
-import { vibeMap } from "@/lib/vibes";
 import { ReviewCard } from "@/components/ReviewCard";
+import { UnboxingCard } from "@/components/UnboxingCard";
 import { Icon } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -20,35 +20,14 @@ export default function UnboxingsPage() {
         </h1>
         <p className="mt-3 text-stone">
           Every one of these was a surprise someone actually opened. Tag{" "}
-          <span className="font-semibold text-ink">@vibevault</span> to feature here.
+          <span className="font-semibold text-ink">@clueandcharm</span> to feature here.
         </p>
       </div>
 
       <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        {unboxings.map((u, i) => {
-          const vibe = vibeMap[u.vibe];
-          const tall = i % 3 === 0;
-          return (
-            <div
-              key={u.id}
-              data-vibe={u.vibe}
-              className={`card tint relative overflow-hidden p-4 ${
-                tall ? "row-span-2 aspect-[3/5]" : "aspect-[3/4]"
-              }`}
-            >
-              <div className="flex h-full flex-col justify-between">
-                <div className="flex items-center justify-between">
-                  <span className="text-3xl">{vibe.emoji}</span>
-                  <span className="chip">{vibe.name}</span>
-                </div>
-                <div>
-                  <p className="font-display text-lg font-bold text-ink">{u.caption}</p>
-                  <p className="mt-1 text-xs text-stone">{u.name}, {u.city}</p>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        {unboxings.map((u, i) => (
+          <UnboxingCard key={u.id} u={u} i={i} />
+        ))}
       </div>
 
       <section className="mt-20">

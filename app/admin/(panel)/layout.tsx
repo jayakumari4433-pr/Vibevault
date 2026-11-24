@@ -4,7 +4,7 @@ import { isAdmin } from "@/app/admin/auth";
 import { AdminChrome } from "@/components/admin/AdminChrome";
 
 export const metadata: Metadata = {
-  title: "Admin · VibeVault",
+  title: "Admin · Clue & Charm",
   robots: { index: false, follow: false },
 };
 

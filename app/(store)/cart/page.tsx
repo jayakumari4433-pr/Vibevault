@@ -5,13 +5,8 @@ import { useCart } from "@/lib/cart";
 import { vibeMap } from "@/lib/vibes";
 import { inr } from "@/lib/format";
 import { Icon } from "@/components/icons";
-
-const TYPE_EMOJI: Record<string, string> = {
-  ring: "💫",
-  pendant: "🫧",
-  jewellery: "🎀",
-  customize: "🎁",
-};
+import { ProductMedia } from "@/components/art/ProductMedia";
+import { getProduct } from "@/lib/products";
 
 export default function CartPage() {
   const { items, subtotal, setQty, remove, count, ready } = useCart();
@@ -54,8 +49,8 @@ export default function CartPage() {
         <div className="space-y-4">
           {items.map((item) => (
             <div key={item.lineId} className="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
-              <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-cream text-3xl">
-                {TYPE_EMOJI[item.type]}
+              <div data-vibe={item.vibe} className="h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-line">
+                <ProductMedia type={item.type} image={getProduct(item.productId)?.image} alt={item.name} className="h-full w-full" />
               </div>
 
               <div className="flex-1">

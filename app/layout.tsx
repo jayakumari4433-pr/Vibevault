@@ -15,25 +15,24 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vibevault.in"),
+  metadataBase: new URL("https://clueandcharm.in"),
   title: {
-    default: "VibeVault — a feeling, boxed.",
-    template: "%s · VibeVault",
+    default: "Clue & Charm — follow the clue, find the charm.",
+    template: "%s · Clue & Charm",
   },
   description:
-    "India's feel-good mystery boxes. Pick your vibe, tell us a little, and open a surprise made to feel like you. Jewellery, rings, pendants — or customise your own from ₹70.",
+    "India's feel-good mystery jewellery boxes. Pick your price, leave us a little note, and open a surprise made to feel like you.",
   keywords: [
     "mystery box",
-    "jewellery mystery box India",
-    "ring mystery box",
-    "pendant mystery box",
-    "customised surprise box",
-    "VibeVault",
+    "mystery jewellery box India",
+    "wedding jewellery box",
+    "surprise jewellery box",
+    "Clue & Charm",
   ],
   openGraph: {
-    title: "VibeVault — a feeling, boxed.",
+    title: "Clue & Charm — follow the clue, find the charm.",
     description:
-      "India's feel-good mystery boxes. A surprise made to feel like you.",
+      "India's feel-good mystery jewellery boxes. A surprise made to feel like you.",
     type: "website",
     locale: "en_IN",
   },

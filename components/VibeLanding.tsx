@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Product, Review, Unboxing, Vibe } from "@/lib/types";
 import { ProductCard } from "./ProductCard";
 import { ReviewCard } from "./ReviewCard";
+import { UnboxingCard } from "./UnboxingCard";
+import { Reveal } from "./motion/Reveal";
+import { Sparkles } from "./motion/Sparkles";
 import { Icon } from "./icons";
 
 export function VibeLanding({
@@ -22,10 +25,11 @@ export function VibeLanding({
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute left-1/2 top-[-10rem] h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-[var(--vibe-tint)] blur-[120px]" />
+          <div className="blob blob-drift left-1/2 top-[-10rem] h-[28rem] w-[28rem] -translate-x-1/2 bg-[var(--vibe-tint)]" />
         </div>
-        <div className="vv-container py-20 text-center md:py-24">
-          <span className="text-6xl">{vibe.emoji}</span>
+        <Sparkles className="-z-10" />
+        <div className="vv-container py-20 text-center md:py-24 animate-in">
+          <span className="inline-block text-6xl animate-float">{vibe.emoji}</span>
           <span className="chip chip-accent mx-auto mt-5 block w-fit">
             the {vibe.name} vibe
           </span>
@@ -56,11 +60,11 @@ export function VibeLanding({
             yours.
           </p>
         </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((p) => (
             <ProductCard key={p.id} product={p} vibe={vibe.slug} />
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* REVIEWS */}
@@ -70,11 +74,11 @@ export function VibeLanding({
             <h2 className="text-center text-3xl font-bold text-ink">
               {vibe.name} customers love it
             </h2>
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <Reveal stagger className="mt-8 grid gap-6 md:grid-cols-3">
               {reviews.map((r) => (
                 <ReviewCard key={r.id} review={r} />
               ))}
-            </div>
+            </Reveal>
           </div>
         </section>
       )}
@@ -85,32 +89,25 @@ export function VibeLanding({
           <h2 className="text-center text-3xl font-bold text-ink">
             {vibe.name} unboxings
           </h2>
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {unboxings.map((u) => (
-              <div key={u.id} className="card tint relative aspect-[3/4] overflow-hidden p-4">
-                <div className="flex h-full flex-col justify-between">
-                  <span className="text-2xl">{vibe.emoji}</span>
-                  <div>
-                    <p className="text-sm font-semibold text-ink">{u.caption}</p>
-                    <p className="mt-1 text-xs text-stone">{u.name}, {u.city}</p>
-                  </div>
-                </div>
-              </div>
+          <Reveal stagger className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {unboxings.map((u, i) => (
+              <UnboxingCard key={u.id} u={u} i={i} />
             ))}
-          </div>
+          </Reveal>
         </section>
       )}
 
       {/* CTA */}
       <section className="vv-container pb-20">
-        <div className="card tint p-10 text-center md:p-14">
-          <h2 className="text-3xl font-bold text-ink md:text-4xl">
+        <Reveal className="card tint relative overflow-hidden p-10 text-center md:p-14">
+          <Sparkles />
+          <h2 className="relative text-3xl font-bold text-ink md:text-4xl">
             Ready for your {vibe.name} surprise?
           </h2>
-          <Link href="#boxes" className="btn btn-accent mt-6 h-12 px-8 text-base">
+          <Link href="#boxes" className="btn btn-accent relative mt-6 h-12 px-8 text-base">
             Shop now <Icon.arrow width={18} height={18} />
           </Link>
-        </div>
+        </Reveal>
       </section>
     </div>
   );

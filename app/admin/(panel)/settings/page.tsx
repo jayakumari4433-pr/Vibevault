@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { PageHeader } from "@/components/admin/ui";
+import { Toggle as UiToggle } from "@/components/admin/Toggle";
 import { Icon } from "@/components/icons";
 
 export default function AdminSettingsPage() {
@@ -32,7 +33,7 @@ export default function AdminSettingsPage() {
         </Section>
 
         <Section title="Pickup address" desc="Where couriers collect your parcels.">
-          <Field label="Business name" placeholder="VibeVault" />
+          <Field label="Business name" placeholder="Clue & Charm" />
           <Field label="Address" placeholder="Street, area, city, pincode" />
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="City" placeholder="City" />
@@ -80,14 +81,7 @@ function Toggle({ label, defaultOn }: { label: string; defaultOn?: boolean }) {
   return (
     <div className="flex items-center justify-between">
       <span className="text-sm text-stone">{label}</span>
-      <button
-        type="button"
-        onClick={() => setOn((v) => !v)}
-        className={`relative h-7 w-12 rounded-full transition-colors ${on ? "bg-sage" : "bg-line"}`}
-        aria-label={label}
-      >
-        <span className={`absolute top-1 h-5 w-5 rounded-full bg-white shadow transition-transform ${on ? "translate-x-6" : "translate-x-1"}`} />
-      </button>
+      <UiToggle on={on} onChange={setOn} label={label} />
     </div>
   );
 }

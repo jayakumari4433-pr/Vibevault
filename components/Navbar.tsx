@@ -7,12 +7,13 @@ import { Logo } from "./Logo";
 import { Icon } from "./icons";
 import { useCart } from "@/lib/cart";
 import { useAuth } from "@/lib/auth";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const links = [
-  { href: "/boxes", label: "Shop" },
-  { href: "/customize", label: "Customise" },
-  { href: "/quiz", label: "Find your vibe" },
-  { href: "/unboxings", label: "Unboxings" },
+  { href: "/", label: "The Box" },
+  { href: "/products", label: "Shop" },
+  { href: "/category/mystery", label: "Mystery" },
+  { href: "/contact", label: "Contact" },
   { href: "/about", label: "About" },
 ];
 
@@ -25,7 +26,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-sand/85 backdrop-blur-xl">
       <nav className="vv-container flex h-16 items-center justify-between">
-        <Link href="/" aria-label="VibeVault home">
+        <Link href="/" aria-label="Clue & Charm home">
           <Logo />
         </Link>
 
@@ -46,7 +47,8 @@ export function Navbar() {
           })}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <ThemeSwitcher />
           <Link
             href={user ? "/account" : "/login"}
             className="hidden rounded-full border border-line bg-paper px-3 py-2 text-sm font-medium text-ink hover:bg-cream sm:inline-flex"

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Policies",
-  description: "Shipping, our no-returns honesty, privacy and terms for VibeVault.",
+  description: "Shipping, our no-returns honesty, privacy and terms for Clue & Charm.",
 };
 
 const sections = [
@@ -20,7 +20,7 @@ const sections = [
     id: "returns",
     title: "No returns — honestly",
     body: [
-      "VibeVault boxes are mystery boxes. The surprise is the whole point, so orders are non-returnable and non-exchangeable. Please order only if you're happy with the surprise idea. 🤍",
+      "Clue & Charm boxes are mystery boxes. The surprise is the whole point, so orders are non-returnable and non-exchangeable. Please order only if you're happy with the surprise idea. 🤍",
       "We don't disclose quantity or exact contents on purpose — you're buying a feeling matched to your vibe, not a checklist.",
       "We pour genuine care into every box, packed by hand to what you told us (your vibe, colour and note).",
       "Parcel damaged in transit? That's on us — send one photo on WhatsApp within 48 hours of delivery and we'll make it right. This is goodwill for transit damage, not a returns policy.",
@@ -40,7 +40,7 @@ const sections = [
     id: "terms",
     title: "Terms",
     body: [
-      "VibeVault sells personalised mystery boxes (and customised surprises from ₹70). Exact contents vary by design — that's the surprise — and are matched to the vibe, colour and note you share.",
+      "Clue & Charm sells personalised mystery boxes (and customised surprises from ₹70). Exact contents vary by design — that's the surprise — and are matched to the vibe, colour and note you share.",
       "Customised orders are made to your request; because they're personalised surprises, they are also non-returnable (except for transit damage, as above).",
       "Prices are in Indian Rupees (₹) and inclusive of applicable taxes unless stated otherwise. Coupons can't be combined unless we say so.",
       "By ordering you confirm your details are accurate. We're not responsible for delays from incorrect addresses or courier disruptions beyond our control.",
@@ -91,7 +91,7 @@ export default function PoliciesPage() {
       </div>
 
       <p className="mt-10 text-center text-sm text-mute">
-        Last updated {new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" })} · VibeVault, India
+        Last updated {new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" })} · Clue & Charm, India
       </p>
     </div>
   );

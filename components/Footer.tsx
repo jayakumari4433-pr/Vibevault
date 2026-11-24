@@ -9,8 +9,8 @@ export function Footer() {
         <div className="md:col-span-1">
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-stone">
-            A feeling, boxed. India&apos;s feel-good mystery boxes — jewellery,
-            rings, pendants, or make your own from ₹70.
+            Follow the clue, find the charm. India&apos;s feel-good mystery
+            jewellery boxes — or name your own price, up to ₹30,000.
           </p>
           <div className="mt-5 flex gap-3">
             <a
@@ -37,27 +37,26 @@ export function Footer() {
         <FooterCol
           title="Shop"
           links={[
-            { href: "/boxes", label: "All boxes" },
-            { href: "/customize", label: "Customise your surprise" },
-            { href: "/quiz", label: "Find your vibe" },
-            { href: "/unboxings", label: "Unboxings" },
+            { href: "/", label: "The Mystery Box" },
+            { href: "/products", label: "All products" },
+            { href: "/products#jewellery", label: "Jewellery boxes" },
           ]}
         />
         <FooterCol
           title="Company"
           links={[
             { href: "/about", label: "About & trust" },
+            { href: "/contact", label: "Contact us" },
             { href: "/policies", label: "Policies" },
-            { href: "/policies#shipping", label: "Shipping" },
             { href: "/policies#returns", label: "No-returns, honestly" },
           ]}
         />
         <FooterCol
           title="Help"
           links={[
+            { href: "/contact", label: "Get in touch" },
             { href: "https://wa.me/910000000000", label: "WhatsApp us" },
             { href: "/login", label: "Log in / Sign up" },
-            { href: "/policies#privacy", label: "Privacy" },
             { href: "/admin", label: "Admin" },
           ]}
         />
@@ -65,7 +64,7 @@ export function Footer() {
 
       <div className="border-t border-line">
         <div className="vv-container flex flex-col items-center justify-between gap-2 py-6 text-xs text-mute sm:flex-row">
-          <p>© {new Date().getFullYear()} VibeVault · Made with care in India 🇮🇳</p>
+          <p>© {new Date().getFullYear()} Clue & Charm · Made with care in India 🇮🇳</p>
           <p>Secure payments by Razorpay · UPI · Cards · COD</p>
         </div>
       </div>

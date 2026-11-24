@@ -38,7 +38,7 @@ export async function createRazorpayOrder(
       amount: Math.round(amountInr * 100), // paise
       currency: "INR",
       receipt,
-      notes: { app: "VibeVault" },
+      notes: { app: "Clue & Charm" },
     }),
   });
   if (!res.ok) {
